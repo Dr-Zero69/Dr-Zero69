@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Generate the GitHub profile README assets (light + dark SVGs) for Dr-Zero69."""
 import os, html
-OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "repo")
+OUT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LIGHT = {"bone": "#2B2B2B", "muted": "#7A7A7A", "dim": "#A3A3A3", "rule": "#C8C8C8", "ghost": "#D9D9D9", "accent": "#1F6F5F"}
 DARK = {"bone": "#E6E6E6", "muted": "#8A8A8A", "dim": "#6A6A6A", "rule": "#3A3A3A", "ghost": "#262626", "accent": "#6FCFB5"}
 MONO = '.mono{font-family:ui-monospace,"SFMono-Regular","SF Mono",Menlo,Consolas,"Liberation Mono",monospace;}'
@@ -130,8 +130,8 @@ svg("timeline", 40 * len(tl) + 20, tb, "Route: 2022 to 2027")
 fcss = '.dot{animation:p 2.4s ease-in-out infinite}.ring{animation:r 2.4s ease-out infinite;transform-origin:60px 64px}@keyframes p{0%,100%{opacity:1}50%{opacity:.35}}@keyframes r{0%{transform:scale(.4);opacity:.8}80%,100%{transform:scale(2.6);opacity:0}}'
 fb = (f'<line class="draw" x1="48" y1="24" x2="952" y2="24" stroke="var(--rule)" stroke-width="1"/>'
       f'<circle class="ring" cx="60" cy="64" r="5" stroke="var(--accent)" stroke-width="1" fill="none"/><circle class="dot" cx="60" cy="64" r="4" fill="var(--accent)"/>'
-      + T(82, 62, "STATUS — WRITING THE DISSERTATION, ONE VALIDATED MODEL AT A TIME", 12, "bone", ls=3)
-      + T(82, 82, "If the held-out error is good, check the folds.", 11, "muted", ls=2)
+      + T(82, 62, "STATUS — RESEARCH, COOK, WORKOUT AND WORK ON MY 1000 HOBBIES :D", 12, "bone", ls=3)
+      + T(82, 82, "\"If the held-out error is good, check the folds.\" — Dr. Zero", 11, "muted", ls=2)
       + T(952, 66, "Greensboro, NC   ·   © 2026", 15, "muted", anchor="end"))
 svg("footer", 110, fb, "Status", fcss)
 
