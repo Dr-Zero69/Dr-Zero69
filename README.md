@@ -4,11 +4,13 @@
 
 <a href="https://github.com/Dr-Zero69?tab=repositories"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/REPOSITORIES-0d1117?style=flat-square&logo=github&logoColor=ffffff"/><img src="https://img.shields.io/badge/REPOSITORIES-ffffff?style=flat-square&logo=github&logoColor=000000" alt="Repositories"/></picture></a>
 <a href="https://www.ncat.edu/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/NC%20A%26T-0d1117?style=flat-square&logo=academia&logoColor=ffffff"/><img src="https://img.shields.io/badge/NC%20A%26T-ffffff?style=flat-square&logo=academia&logoColor=000000" alt="North Carolina A&T State University"/></picture></a>
+<a href="https://www.linkedin.com/in/anurodh-jha-690105145/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/LINKEDIN-0d1117?style=flat-square&logo=linkedin&logoColor=ffffff"/><img src="https://img.shields.io/badge/LINKEDIN-ffffff?style=flat-square&logo=linkedin&logoColor=000000" alt="LinkedIn"/></picture></a>
 <a href="https://www.cdc.gov/nchs/nhanes/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/NHANES-0d1117?style=flat-square&logo=databricks&logoColor=ffffff"/><img src="https://img.shields.io/badge/NHANES-ffffff?style=flat-square&logo=databricks&logoColor=000000" alt="NHANES"/></picture></a>
+<a href="https://www.cdc.gov/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/CDC-0d1117?style=flat-square&logo=cdc&logoColor=ffffff"/><img src="https://img.shields.io/badge/CDC-ffffff?style=flat-square&logo=cdc&logoColor=000000" alt="CDC"/></picture></a>
 
 </div>
 
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s01.svg"/><img src="assets/s01.svg" alt="01 — whoami"/></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s01.svg"/><img src="assets/s01.svg" alt="01 — who am i"/></picture>
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/whoami.svg"/><img src="assets/whoami.svg" alt="About Anurodh"/></picture>
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s02.svg"/><img src="assets/s02.svg" alt="02 — research"/></picture>
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/research.svg"/><img src="assets/research.svg" alt="Four studies"/></picture>

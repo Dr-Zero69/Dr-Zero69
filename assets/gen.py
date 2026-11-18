@@ -24,6 +24,7 @@ def svg(name, h, body, label, extra_css=""):
 
 
 def T(x, y, s, size=15, fill="bone", cls="", anchor=None, ls=None, weight=None):
+    size = size + 1
     a = f' text-anchor="{anchor}"' if anchor else ""
     l = f' letter-spacing="{ls}"' if ls is not None else ""
     w = f' font-weight="{weight}"' if weight else ""
@@ -52,16 +53,16 @@ hdr = (f'<line class="draw a1" x1="48" y1="58" x2="952" y2="58" stroke="var(--ru
        + T(48, 262, "PhD Candidate, Applied Science & Technology · North Carolina A&T State University", 15, "muted", "rise a4")
        + f'<line class="draw a4" x1="48" y1="296" x2="952" y2="296" stroke="var(--rule)" stroke-width="1"/>'
        + "".join(T(48, 334, s, 15, "bone", f"rot r{i+1}") for i, s in enumerate(rot))
-       + T(48, 372, "CURRENTLY ▸ dissertation on pollutant distribution, exposure risk and health outcomes · four studies · May 2027", 12, "muted", "fade a6", ls=1))
+       + T(48, 372, "CURRENTLY ▸ dissertation on pollutant distribution, exposure risk and health outcomes · May 2027", 12, "muted", "fade a6", ls=1))
 svg("header", 400, hdr, "Anurodh Jha — Environmental Epidemiology, Machine Learning, Geospatial Analysis", rot_css)
 
 # ---------------- 01 whoami
-who = (T(48, 32, "PhD candidate at North Carolina A&T State University, Greensboro, NC. Environmental Health and Disease Laboratory.", 15, "bone", "rise a1")
+who = (T(48, 32, "PhD candidate, North Carolina A&T State University, Greensboro, NC. Environmental Health & Disease Lab.", 15, "bone", "rise a1")
        + T(48, 60, "I work where environmental measurements, biomonitoring data and predictive models meet,", 15, "bone", "rise a2")
-       + T(48, 84, "and I care whether a model survives honest validation: blocked, nested, weighted, uncertainty intact.", 15, "bone", "rise a2")
+       + T(48, 84, "and I care whether a model survives honest validation: blocked, nested, weighted, uncertain.", 15, "bone", "rise a2")
        + f'<line class="rise a3" x1="48" y1="112" x2="952" y2="112" stroke="var(--rule)" stroke-width="1" opacity=".6"/>'
-       + T(48, 146, "FOCUS  ▸", 11, "muted", "rise a4", ls=2.5) + T(164, 146, "Exposure science · Mixture epidemiology · Spatial ML · Design-based inference (NHANES)", 15, "bone", "rise a4")
-       + T(48, 180, "DATA  ▸", 11, "muted", "rise a5", ls=2.5) + T(164, 180, "Household soil metals · Serum PFAS · Urinary biomonitoring · CDC PLACES · Census & TIGER", 15, "bone", "rise a5")
+       + T(48, 146, "FOCUS  ▸", 11, "muted", "rise a4", ls=2.5) + T(164, 146, "Exposure science · Mixture epidemiology · Spatial ML · Agentic AI · LLMs · RAG", 15, "bone", "rise a4")
+       + T(48, 180, "DATA  ▸", 11, "muted", "rise a5", ls=2.5) + T(164, 180, "Soil metals · Serum PFAS · Urinary biomonitoring · CDC PLACES · Census & TIGER", 15, "bone", "rise a5")
        + T(48, 214, "STATUS  ▸", 11, "muted", "rise a6", ls=2.5) + T(164, 214, "Prelims submitted · one paper accepted, two under review · open to collaboration", 15, "accent", "rise a6"))
 svg("whoami", 236, who, "About Anurodh")
 
@@ -78,22 +79,22 @@ def rows(name, items, label):
 
 research = [
     ("01 / SOIL METALS → SMALL-AREA STROKE PREVALENCE", "Can household soil metals, soil properties, housing, roads and demographics predict modeled stroke prevalence by census tract?",
-     "Tree ensembles and Ridge under nested leave-one-tract-out and spatially blocked validation; SHAP for interpretation; honest about 36 tracts.",
+     "Tree ensembles and Ridge under nested leave-one-tract-out and spatially blocked validation; SHAP; honest about 36 tracts.",
      "PYTHON · SCIKIT-LEARN · SHAP · ARCGIS PRO · KRIGING · MORAN'S I  —  IJERPH, REVISED AFTER REVIEW"),
     ("02 / PFAS MIXTURES × BUTYRYLCHOLINESTERASE", "Serum PFAS and circulating BChE in U.S. adults, using the NHANES 2021–2023 cycle that measured the enzyme for the first time.",
-     "Survey-weighted quantile g-computation and single-PFAS models; WQS and BKMR as sensitivity analyses; covariate-block decomposition.",
+     "Survey-weighted quantile g-computation and single-PFAS models; WQS and BKMR sensitivity analyses.",
      "R · SURVEY · QGCOMP · GWQS · BKMR  —  TOXICS, ACCEPTED NOVEMBER 2026"),
     ("03 / ELEMENT-SPECIFIC PREDICTABILITY OF RESIDENTIAL SOIL METALS", "Multi-output machine learning for Pb, Cd, Zn, Se and Cu from covariates alone, tested with spatial blocking and an external city.",
-     "Shows which elements carry covariate signal and which do not, and why random cross-validation overstates all of them.",
+     "Shows which elements carry covariate signal and which do not, and why random CV overstates all of them.",
      "PYTHON · RANDOM FOREST · SPATIAL CV · GEOPANDAS  —  ENVIRONMENTS, REVISED AFTER REVIEW"),
-    ("04 / LANGUAGE MODELS × URINARY BIOMONITORING", "An NHANES-based reference set so that language models interpreting urinary biomonitoring results can be scored against ground truth.",
-     "Phase 0 complete: analyte and cycle selection, detection-frequency audit, joint cohort. Phase 1: weighted reference percentiles.",
+    ("04 / LANGUAGE MODELS × URINARY BIOMONITORING", "An NHANES-based reference set so that LLMs interpreting urinary biomonitoring results can be scored against truth.",
+     "Phase 0 complete: analyte and cycle selection, detection audit, joint cohort. Phase 1: weighted percentiles.",
      "NHANES 2011–2018 · PYTHON · DESIGN-BASED ESTIMATION · LLM EVALUATION  —  IN PROGRESS"),
 ]
 rows("research", research, "Research: four studies")
 projects = [
     ("05 / VALORANT WIN-RATE PREDICTION", "Player performance statistics (K/D, kills, deaths, assists, maps, agents) as predictors of win rate.",
-     "A weekend of feature engineering and model comparison in a notebook, because epidemiologists also play games.", "JUPYTER · PYTHON · SCIKIT-LEARN  —  github.com/Dr-Zero69/Valorant-Win-Rate-Prediction"),
+     "Feature engineering and model comparison in a notebook, because epidemiologists also play games.", "JUPYTER · PYTHON · SCIKIT-LEARN  —  github.com/Dr-Zero69/Valorant-Win-Rate-Prediction"),
     ("06 / FIREBRAND TRAJECTORY PREDICTOR", "Predicting where wind-borne embers land, an input to wildfire spread and structure-ignition risk.",
      "Physics-informed features with a learned trajectory model.", "PYTHON · SIMULATION  —  github.com/Dr-Zero69/Firebrand-Trajectory-Predictor"),
     ("07 / BATTERY HEATING AND HEATER SIGNAL", "Thermal behaviour of a battery pack and the control signal that keeps it in its operating window.",
@@ -102,12 +103,13 @@ projects = [
 rows("projects", projects, "Side projects")
 
 # ---------------- stack
-stack = [("LANGUAGES", "Python · R · SQL · PowerShell · C#"), ("MODELLING", "scikit-learn · Random Forest / Extra Trees · Ridge · SHAP · nested & spatially blocked CV"),
+stack = [("LANGUAGES", "Python · R · SQL · PowerShell · C#"), ("MODELLING", "scikit-learn · Random Forest / Extra Trees · Ridge · SHAP · nested & spatial CV"),
          ("MIXTURES", "survey · qgcomp · gWQS · bkmr · design-based inference, domain analysis, FDR control"),
          ("GEOSPATIAL", "ArcGIS Pro · geopandas · ordinary kriging · Moran's I · spatial folds · TIGER/Line"),
-         ("DATA", "NHANES · CDC PLACES / 500 Cities · Census & ACS · county GIS & parcels · XRF soil campaigns"),
-         ("WRITING", "Word & Zotero automation (lxml, CSL) · reproducible manuscripts with scripted verification"),
-         ("TOOLING", "Jupyter · Git · VS Code · Azure AI services · Claude Code")]
+         ("DATA", "NHANES · CDC PLACES / 500 Cities · Census & ACS · county GIS · XRF soil campaigns"),
+         ("WRITING", "Word & Zotero automation (lxml, CSL) · reproducible, script-verified manuscripts"),
+         ("AI", "Agentic AI workflows · LLM evaluation · RAG pipelines · Claude API & Code · Azure AI"),
+         ("TOOLING", "Jupyter · Git · VS Code · PowerShell")]
 sb = f'<line x1="150" y1="8" x2="150" y2="{32*len(stack)+6}" stroke="var(--rule)" stroke-width="1" opacity=".5"/>'
 for i, (k, v) in enumerate(stack):
     sb += T(48, 32 + 32 * i, k, 12, "muted", f"rise a{i+1}", ls=2) + T(166, 32 + 32 * i, v, 15, "bone", f"rise a{i+1}")
@@ -116,7 +118,7 @@ svg("stack", 32 * len(stack) + 20, sb, "Technical stack")
 # ---------------- timeline
 tl = [("2022", "Joined GitHub. First notebooks.", False), ("2024", "Firebrand trajectory predictor · Azure AI Vision labs · first spatial models.", False),
       ("2025", "Battery heater-signal modelling · Valorant win-rate prediction · soil metal analyses begin.", False),
-      ("2026", "Three manuscripts submitted and revised · Toxics paper accepted · prelims manuscript · LLM Phase 0.", True),
+      ("2026", "Three manuscripts submitted and revised · Toxics paper accepted · prelims · LLM Phase 0.", True),
       ("2027", "Phase 1 reference percentiles · full dissertation draft · defense · graduation (May).", False)]
 tb = f'<line class="draw" x1="110" y1="10" x2="110" y2="{40*len(tl)+10}" stroke="var(--rule)" stroke-width="1"/>'
 for i, (yr, s, now) in enumerate(tl):
@@ -135,7 +137,7 @@ fb = (f'<line class="draw" x1="48" y1="24" x2="952" y2="24" stroke="var(--rule)"
       + T(952, 66, "Greensboro, NC   ·   © 2026", 15, "muted", anchor="end"))
 svg("footer", 110, fb, "Status", fcss)
 
-for i, t in enumerate(["whoami", "research", "side projects", "telemetry", "the route", "stack"], 1):
+for i, t in enumerate(["who am i", "research", "side projects", "telemetry", "the route", "stack"], 1):
     section(i, t, i)
 
 
@@ -157,11 +159,13 @@ readme = f"""<div align="center">
 
 <a href="https://github.com/{U}?tab=repositories"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/REPOSITORIES-0d1117?style=flat-square&logo=github&logoColor=ffffff"/><img src="https://img.shields.io/badge/REPOSITORIES-ffffff?style=flat-square&logo=github&logoColor=000000" alt="Repositories"/></picture></a>
 <a href="https://www.ncat.edu/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/NC%20A%26T-0d1117?style=flat-square&logo=academia&logoColor=ffffff"/><img src="https://img.shields.io/badge/NC%20A%26T-ffffff?style=flat-square&logo=academia&logoColor=000000" alt="North Carolina A&T State University"/></picture></a>
+<a href="https://www.linkedin.com/in/anurodh-jha-690105145/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/LINKEDIN-0d1117?style=flat-square&logo=linkedin&logoColor=ffffff"/><img src="https://img.shields.io/badge/LINKEDIN-ffffff?style=flat-square&logo=linkedin&logoColor=000000" alt="LinkedIn"/></picture></a>
 <a href="https://www.cdc.gov/nchs/nhanes/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/NHANES-0d1117?style=flat-square&logo=databricks&logoColor=ffffff"/><img src="https://img.shields.io/badge/NHANES-ffffff?style=flat-square&logo=databricks&logoColor=000000" alt="NHANES"/></picture></a>
+<a href="https://www.cdc.gov/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/CDC-0d1117?style=flat-square&logo=cdc&logoColor=ffffff"/><img src="https://img.shields.io/badge/CDC-ffffff?style=flat-square&logo=cdc&logoColor=000000" alt="CDC"/></picture></a>
 
 </div>
 
-{pic("s01", "01 — whoami")}
+{pic("s01", "01 — who am i")}
 {pic("whoami", "About Anurodh")}
 {pic("s02", "02 — research")}
 {pic("research", "Four studies")}
